@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除</title>
+	<style>	
+	*{
+		box-sizing:border-box;
+	}
+	.clf:before,.clf:after{
+		content:"";
+		display: block;
+		clear:both;
+	}
+	.box1,.box2{
+		width:1200px;
+		height:auto;
+		border-top:1px solid #f0f;
+		border-left:1px solid #f0f;
+		margin:30px auto;
+	}
+
+	
+	.box1 .inner,.box2 .inner{
+		width:25%;
+		height:300px;
+		border-right:1px solid #f0f;
+		border-bottom:1px solid #f0f;
+		float: left;
+
+	}
+	@media screen and (min-width:1200px){
+		.box1{
+			width:1200px;
+		}
+		
+	}
+	@media screen and (max-width:1200px){
+		.box1,.box2{
+			width:1000px;
+		}
+		.box1 .inner,.box2 .inner{
+			width:33.333333333%;
+		}
+		.box1 .inner:nth-last-child(3)~div{
+			display:none;
+		}
+		.box2 .inner:nth-child(4n){
+			display: none;
+		}
+
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box1 clf">
+				<div class="inner">001</div>
+				<div class="inner">002</div>
+				<div class="inner">003</div>
+				<div class="inner">004</div>
+				<div class="inner">005</div>
+				<div class="inner">006</div>
+				<div class="inner">007</div>
+				<div class="inner">008</div>
+			</div>
+			<div class="box2 clf">
+				<div class="inner">001</div>
+				<div class="inner">002</div>
+				<div class="inner">003</div>
+				<div class="inner">004</div>
+				<div class="inner">005</div>
+				<div class="inner">006</div>
+				<div class="inner">007</div>
+				<div class="inner">008</div>
+			</div>		
+</body>
+</html>
